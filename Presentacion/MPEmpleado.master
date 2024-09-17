@@ -1,0 +1,113 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MPEmpleado.master.cs" Inherits="MPEmpleado" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Mutualista</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 102%;
+        }
+        .auto-style2 {
+            margin-left: 1px;
+        }
+        .auto-style3 {
+            width: 1429px;
+            height: 481px;
+        }
+        .auto-style4 {
+            width: 130px;
+            height: 481px;
+        }
+        .auto-style7 {
+            height: 15px;
+            width: 130px;
+        }
+        .auto-style8 {
+            width: 130px;
+            height: 81px;
+        }
+        .auto-style9 {
+            width: 1429px;
+            height: 81px;
+        }
+        .auto-style10 {
+            height: 81px;
+        }
+        .auto-style11 {
+            margin-right: 0px;
+        }
+        .auto-style12 {
+            height: 481px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style8" style="background-color: #33CCFF">
+                    <asp:Label ID="LblNomUsu" runat="server" ForeColor="Red"></asp:Label>
+                    <br />
+                </td>
+                <td class="auto-style9" style="background-color: #33CCFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Mutualista&nbsp;</td>
+                <td style="background-color: #33CCFF" class="auto-style10">
+        <asp:Button ID="BtnSalir" runat="server" OnClick="BtnSalir_Click" Text="Cerrar Sesión" CssClass="auto-style2" Width="125px" />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style4" style="background-color: #33CCFF">
+                    <asp:Panel ID="Panel1" runat="server" Height="484px">
+                        <asp:TreeView ID="TreeView1" runat="server" CssClass="auto-style11" Height="429px" Width="187px" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged">
+                            <Nodes>
+                                <asp:TreeNode Text="Menu" Value="Menu">
+                                    <asp:TreeNode Text="Alta Empleado" Value="Alta Empleado" NavigateUrl="~/AltaEmpleado.aspx"></asp:TreeNode>
+                                    <asp:TreeNode NavigateUrl="~/ABMConsultorio.aspx" Text="ABMConsultorio" Value="ABMConsultorio"></asp:TreeNode>
+                                    <asp:TreeNode NavigateUrl="~/ABMPaciente.aspx" Text="ABMPaciente" Value="ABMPaciente"></asp:TreeNode>
+                                    <asp:TreeNode NavigateUrl="~/AltaPoliclinica.aspx" Text="AltaPoliclinica" Value="AltaPoliclinica"></asp:TreeNode>
+                                    <asp:TreeNode NavigateUrl="~/AltaConsulta.aspx" Text="Alta Consulta" Value="Alta Consulta"></asp:TreeNode>
+                                    <asp:TreeNode Text="Alta Solicitud" Value="Alta Solicitud" NavigateUrl="~/AltaSolicitud.aspx"></asp:TreeNode>
+                                    <asp:TreeNode Text="Marcar Asistencia" Value="Marcar Asistencia" NavigateUrl="~/MarcarAsistencia.aspx"></asp:TreeNode>
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="Listados" Value="Listados">
+                                    <asp:TreeNode NavigateUrl="~/ListadodeCosnultas.aspx" Text="Listar de Consultas" Value="Listar de Consultas"></asp:TreeNode>
+                                    <asp:TreeNode NavigateUrl="~/Estadistica.aspx" Text="Estadisticas" Value="Estadisticas"></asp:TreeNode>
+                                </asp:TreeNode>
+                            </Nodes>
+                        </asp:TreeView>
+                    </asp:Panel>
+                </td>
+                <td class="auto-style3">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            <table style="width:100%;">
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+        
+        </asp:ContentPlaceHolder>
+                </td>
+                <td class="auto-style12"></td>
+            </tr>
+            <tr>
+                <td class="auto-style7"></td>
+            </tr>
+            <tr>
+                <td class="auto-style7">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style7">&nbsp;</td>
+            </tr>
+        </table>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+    </form>
+</body>
+</html>
